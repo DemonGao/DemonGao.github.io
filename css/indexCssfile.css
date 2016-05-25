@@ -1,0 +1,149 @@
+/*内容栏*/
+.content{
+	width: 1024px;
+	margin: 10px auto;
+}
+.side-bar{
+	width: 27%;
+	float: right;
+}
+.content-bar{
+	width: 70%;
+	float: left;
+}
+
+.content-bar h2{
+	font-family: "微软雅黑";
+	font-size: 16px;
+	font-weight: bold;
+    line-height: 36px;
+    color: #333;
+	border-bottom: #db6d4c 4px solid;
+	margin-bottom: 30px;
+}
+/*articlescrap模板 样式设置*/
+.articlescrap{
+	padding: 0 20px 20px 20px;
+	position: relative;
+    font: 12px/1.5 'Microsoft Yahei', 'Simsun';
+    border-left: 3px solid #aaa;
+}
+
+.articlescrap::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: -7.5px;
+    background: #cac1c1;
+    border: 2px solid #fff;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+.articlescrap::after{
+	clear:both;
+	content:'.';
+	display:block;
+	width: 0;
+	height: 0;
+	visibility: hidden;
+}
+.articlescrap a{
+	text-decoration: none;
+	color: #000000;
+}
+.articlescrap figure{
+	width: 25%;
+	float: left;
+}
+.articlescrap figure img{
+	width: 100%;
+}
+.articlescrap>div{
+	width: 72%;
+	float: right;
+}
+.articlescrap-title{
+	font-size: 16px;
+    font-weight: bold;
+    transition: all .5s;
+    margin-bottom: 10px;
+}
+
+.articlescrap-text{
+	line-height: 22px;
+	color: #756F71;
+}
+.articlescrap-data{
+	overflow: hidden;
+    clear: both;
+    margin: 10px 0;
+    display: inline-block;
+    color: #838383;
+    width: 100%;
+}
+.articlescrap-data .type{
+	margin-right:20px ;
+}
+.articlescrap-data .type a{
+	color: #759b08;
+}
+.articlescrap-data .type i{
+	margin-right: 5px;
+	color: #F8A8A8;
+}
+
+.articlescrap-data .time{
+	
+}
+.articlescrap-data .time i{
+	margin-right: 5px;
+	color: #83D2ED;
+	font-size: 12px;
+}
+.articlescrap-data .lookall{
+	background-color: #FD8A61;
+	float: right;
+	font-size: 14px;
+	padding:5px ;
+	color: #FFFFFF;
+	
+}
+.articlescrap-data .lookall span{
+	display: block;
+}
+.articlescrap-data .lookall i{
+	font-size: 20px;
+	margin-left: 8px;
+	color: #FFFFFF;
+}
+.articlescrap:hover::before {
+	background: #474645;
+}
+.articlescrap:hover .datetime{
+	opacity: 1;
+}
+.articlescrap .datetime{
+	width: 121px;
+    height: 30px;
+    position: absolute;
+    left: -128px;
+    top: 12px;
+    z-index: 0;
+    color: #FFFFFF;
+    background:  url(../img/ti.png) no-repeat;
+    opacity: 0;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+.articlescrap .datetime i{
+	color: #83D2ED;
+	margin-left:10px;
+	margin-right: 5px;
+}
