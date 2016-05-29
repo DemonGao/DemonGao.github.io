@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script>
+			$.ajax({
+				type:"get",
+				url:"http://op.juhe.cn/onebox/weather/query",
+				dataType:'jsonp',
+				data:{
+					cityname:"烟台",
+					key:"69a45338e81d01fb2b9e3d322fdc9e99"
+				},
+				success:function(data){
+					console.log(data.result);
+				}
+			})
+		</script>
+	</body>
+</html>

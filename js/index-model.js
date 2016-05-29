@@ -73,3 +73,21 @@ ViewCommand({
 	//参数说明  parma1 : 元素容器,parma2 : 标题数据,parma3 : 元素模版
 	param: ['content-bar', articlescrapData, 'articlescrap']
 });
+
+//天气
+$.ajax({
+	type:"get",
+	url:"http://op.juhe.cn/onebox/weather/query",
+	dataType:'jsonp',
+	data:{
+		cityname:"烟台",
+		key:"69a45338e81d01fb2b9e3d322fdc9e99"
+	},
+	success:function(data){
+		weather({
+			command: 'display',
+			param:['weather',data.result.data,'Nowday']
+		});
+		
+	}
+});

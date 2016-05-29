@@ -21,15 +21,6 @@ var ViewCommand = (function(){
 				'<div class="datetime"><i class="iconfont">&#xe60b;</i>{#time#}</div>',
 			'</div>'
 		].join(''),
-		//展示标题结构模板
-		title:[
-			'<div class ="title">',
-				'<div class="main">',
-					'<h2>{#title#}</h2>',
-					'<p>{#tips#}</p>',
-				'</div>',
-			'</div>'
-		].join('')
 	},
 		html='';
 	function formateString(str,obj){

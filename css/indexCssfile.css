@@ -3,30 +3,50 @@
 	width: 1024px;
 	margin: 10px auto;
 }
-.side-bar{
-	width: 27%;
-	float: right;
+.content::after{
+	/*清除浮动*/
+	clear:both;
+	content:'.';
+	display:block;
+	width: 0;
+	height: 0;
+	visibility: hidden;
 }
-.content-bar{
-	width: 70%;
-	float: left;
-}
-
-.content-bar h2{
+.content>h2{
 	font-family: "微软雅黑";
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: bold;
     line-height: 36px;
     color: #333;
-	border-bottom: #db6d4c 4px solid;
-	margin-bottom: 30px;
+    background: url(../img/h_line.jpg) repeat-x 20px center;
+	/*border-bottom: #db6d4c 4px solid;
+	margin-bottom: 30px;*/
 }
+.content>h2 p{
+	background: #FFFFFF;
+	width: 90px;
+}
+.content>h2 span{
+	color: #FE5187;
+}
+.side-bar{
+	width: 28%;
+	float: right;
+	box-sizing: border-box;
+}
+.content-bar{
+	width: 72%;
+	float: left;
+	padding-top: 10px;
+}
+
 /*articlescrap模板 样式设置*/
 .articlescrap{
 	padding: 0 20px 20px 20px;
 	position: relative;
     font: 12px/1.5 'Microsoft Yahei', 'Simsun';
     border-left: 3px solid #aaa;
+    background: url(../img/r_line.jpg) repeat-y right;
 }
 
 .articlescrap::before {
@@ -59,9 +79,15 @@
 .articlescrap figure{
 	width: 25%;
 	float: left;
+	overflow: hidden;
 }
 .articlescrap figure img{
 	width: 100%;
+	transition: all .5s;
+}
+.articlescrap figure:hover img{
+	transform: scale(1.1);
+	transition: all .5s;
 }
 .articlescrap>div{
 	width: 72%;
@@ -146,4 +172,91 @@
 	color: #83D2ED;
 	margin-left:10px;
 	margin-right: 5px;
+}
+
+/*天气css*/
+#weather{
+	box-sizing: border-box;
+	/*width:100%;*/
+	margin: 10px;
+	
+}
+.weather-nowday{
+	background-image: url(../img/weather_bg.png);
+	background-size: 100% 100%;
+	background-position:center center;
+	color:#FFFFFF;
+	border-radius: 10px;
+}
+.weather-nowday .title,.weather-nowday h2,.weather-nowday .info{
+	padding: 10px;
+}
+/*天气顶部时间星期地点*/
+.weather-nowday .title span:nth-child(3){
+	float: right;
+}
+.weather-nowday .title span:nth-child(1){
+	margin-right: 10px;
+}
+.weather-nowday img{
+}
+.weather-nowday-figcaption{
+	
+}
+.weather-nowday-figcaption h2{
+	margin-top: 80px;
+	text-align: center;
+}
+.weather-nowday-figcaption h2::after{
+	/*清除浮动*/
+	clear:both;
+	content:'.';
+	display:block;
+	width: 0;
+	height: 0;
+	visibility: hidden;
+}
+.weather-nowday-figcaption h2 span{
+	/*float: left;*/
+}
+.weather-nowday-figcaption h2 span:nth-child(1){
+	display: inline-block;
+	width: 100%;
+	font-size: 3.5em;
+}
+.weather-nowday-figcaption h2 span:nth-child(2){
+	font-size: 12px;
+	display: inline-block;
+	position: relative;
+	top: -20px;	
+	left: 50px;
+}
+.weather-nowday-figcaption h2 span:nth-child(2) p{
+	width: 30px;
+	vertical-align: top;
+	overflow: hidden;
+	display: inline-block;
+}
+.weather-nowday-figcaption .info{
+	text-align: center;
+}
+.weather-nowday-figcaption .info img{
+	width: 25px;
+}
+.weather-nowday-figcaption .info span{
+	display: inline-block;
+	vertical-align: top;
+	height: 25px;
+	line-height: 25px;
+}
+.weather-nowday-figcaption .state{
+	box-sizing: border-box;
+	border-top: 2px solid #FFFFFF;
+	padding: 5px 10px;
+}
+.weather-nowday-figcaption .state p{
+	font-size: 12px;
+	width: 33.3%;
+	display: inline-block;
+	vertical-align: top;	
 }
