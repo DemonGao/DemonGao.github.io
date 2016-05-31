@@ -40,8 +40,15 @@ surfaced.init();
 var articlescrapData = [
 	{
 		src: 'img/01.jpg',
+		title: '博主介绍',
+		text: '高世超,男,一个90后程序员,从小学的时候,我就对计算机比较感兴趣,当时参加了学校组织的网页制作校本课程,那时候用的是dreamweaver,都是些托拉拽的操作,那时候还不知道js,只会从网站上赋值粘贴以下代码,然后鼠标后面有了小尾巴,页面上下起了雪花,各种特效...',
+		type_href:'www.个人博客.com',
+		type_href_title:'个人博客',
+		time:'2014-02-19',
+	}, 
+	{
+		src: 'img/01.jpg',
 		title: '住在手机里的朋友',
-		href:'www.baidu.com',
 		text: '通信时代，无论是初次相见还是老友重逢，交换联系方式，常常是彼此交换名片，然后郑重或是出于礼貌用手机记下对方的电话号码。在快节奏的生活里，我们不知不觉中就成为住在别人手机里的朋友。又因某些意外，变成了别人手机里匆忙的过客，这种快餐式的友谊 ...',
 		type_href:'www.个人博客.com',
 		type_href_title:'个人博客',
@@ -50,16 +57,6 @@ var articlescrapData = [
 	{
 		src: 'img/01.jpg',
 		title: '住在手机里的朋友',
-		href:'www.baidu.com',
-		text: '通信时代，无论是初次相见还是老友重逢，交换联系方式，常常是彼此交换名片，然后郑重或是出于礼貌用手机记下对方的电话号码。在快节奏的生活里，我们不知不觉中就成为住在别人手机里的朋友。又因某些意外，变成了别人手机里匆忙的过客，这种快餐式的友谊 ...',
-		type_href:'www.个人博客.com',
-		type_href_title:'个人博客',
-		time:'2014-02-19',
-	}, 
-	{
-		src: 'img/01.jpg',
-		title: '住在手机里的朋友',
-		href:'www.baidu.com',
 		text: '通信时代，无论是初次相见还是老友重逢，交换联系方式，常常是彼此交换名片，然后郑重或是出于礼貌用手机记下对方的电话号码。在快节奏的生活里，我们不知不觉中就成为住在别人手机里的朋友。又因某些意外，变成了别人手机里匆忙的过客，这种快餐式的友谊 ...',
 		type_href:'www.个人博客.com',
 		type_href_title:'个人博客',
@@ -73,23 +70,12 @@ ViewCommand({
 	param: ['content-bar', articlescrapData, 'articlescrap']
 });
 
-weather({
-	command:'getData',
+//获取天气数据 并绘制
+ViewCommand({
+	command:'getWeatherData',
 	param:['烟台']
 });
-//天气
-var _cityname=false;
-addEvent(document.getElementById("weather"),'click',function(event){
-	var event=getEvent(event);
-	var target=getTarget(event);
-	if(target.id=="cityname"){
-		if(_cityname==false){
-			SelectCity.Action["create"](target.parentNode.parentNode);
-			_cityname=true;
-		}
-	}
-});
-
+//天气切换
 var SelectCity={
 	tpl:{
 		selectcn:[
@@ -105,8 +91,8 @@ var SelectCity={
 			var weathersearch=document.getElementById("weathersearch");
 			addEvent(weathersearch,"click",function(){
 				var cityname=document.getElementById("Icityname").value.toString();
-				weather({
-					command:'getData',
+				ViewCommand({
+					command:'getWeatherData',
 					param:[cityname]
 				});
 			})
@@ -114,3 +100,27 @@ var SelectCity={
 	}
 };
 
+//天气切换事件绑定 By委托模式
+var _cityname=false;
+addEvent(document.getElementById("weather"),'click',function(event){
+	var event=getEvent(event);
+	var target=getTarget(event);
+	if(target.id==="cityname"){
+		if(_cityname==false){
+			SelectCity.Action["create"](target.parentNode.parentNode);
+			_cityname=true;
+		}
+	}
+});
+
+//阅读全文事件绑定 by 委托模式
+addEvent(document.getElementById("content-bar"),"click",function(event){
+	var event=getEvent(event);
+	var target=getTarget(event);
+	if(target.id==="articleRead"){
+		ViewCommand({
+			command:'getArticleData',
+//			param:[cityname]
+		});
+	}
+});
