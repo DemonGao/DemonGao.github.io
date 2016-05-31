@@ -33,7 +33,6 @@ var base = {
 };
 var surfaced = Surfaced('surface', base);
 surfaced.init();
-
 /***
  * 模板
  * 
@@ -74,20 +73,44 @@ ViewCommand({
 	param: ['content-bar', articlescrapData, 'articlescrap']
 });
 
+weather({
+	command:'getData',
+	param:['烟台']
+});
 //天气
-$.ajax({
-	type:"get",
-	url:"http://op.juhe.cn/onebox/weather/query",
-	dataType:'jsonp',
-	data:{
-		cityname:"烟台",
-		key:"69a45338e81d01fb2b9e3d322fdc9e99"
-	},
-	success:function(data){
-		weather({
-			command: 'display',
-			param:['weather',data.result.data,'Nowday']
-		});
-		
+var _cityname=false;
+addEvent(document.getElementById("weather"),'click',function(event){
+	var event=getEvent(event);
+	var target=getTarget(event);
+	if(target.id=="cityname"){
+		if(_cityname==false){
+			SelectCity.Action["create"](target.parentNode.parentNode);
+			_cityname=true;
+		}
 	}
 });
+
+var SelectCity={
+	tpl:{
+		selectcn:[
+			'<div class="selectcity">',
+				'<input id="Icityname" type="text" placeholder="请输入城市"/>',
+				'<button id="weathersearch">查询</button>',
+			'</div>',
+		].join(''),
+	},
+	Action:{
+		create:function(container){
+			container.innerHTML+=SelectCity.tpl.selectcn;
+			var weathersearch=document.getElementById("weathersearch");
+			addEvent(weathersearch,"click",function(){
+				var cityname=document.getElementById("Icityname").value.toString();
+				weather({
+					command:'getData',
+					param:[cityname]
+				});
+			})
+		},
+	}
+};
+

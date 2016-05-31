@@ -4,14 +4,14 @@ var weather=(function(){
 		//当天天气模板
 		Nowday:[
 			'<figure class="weather-nowday">',
-				'<p class="title"><span>{#realtime__date#}</span><span>周{#weather__0__week#}</span><span>{#realtime__city_name#}</span></p>',
+				'<p class="title"><span>{#result__data__realtime__date#}</span><span>周{#result__data__weather__0__week#}</span><span >[<i id="cityname">切换</i>]</span><span>{#result__data__realtime__city_name#}</span></p>',
 				'<figcaption class="weather-nowday-figcaption">',
-					'<h2><span>{#realtime__weather__temperature#}°</span><span>[<p>{#realtime__time#}</p>更新]</span></h2>',
-					'<p class="info"><img src="img/weatherIcon/{#realtime__weather__img#}.png"/> <span>{#realtime__weather__info#}{#weather__0__info__night__2#}/{#weather__0__info__day__2#}</span></p>',
+					'<h2><span>{#result__data__realtime__weather__temperature#}°</span><span>[<p>{#result__data__realtime__time#}</p>更新]</span></h2>',
+					'<p class="info"><img src="img/weatherIcon/{#result__data__realtime__weather__img#}.png"/> <span>{#result__data__realtime__weather__info#}{#result__data__weather__0__info__night__2#}/{#result__data__weather__0__info__day__2#}</span></p>',
 					'<div class="state">',
-						'<p>空气质量：{#pm25__pm25__quality#}</p>',
-						'<p>湿度：{#realtime__weather__humidity#}%</p>',
-						'<p>{#realtime__wind__direct#} {#realtime__wind__power#}</p>',
+						'<p>空气质量：{#result__data__pm25__pm25__quality#}</p>',
+						'<p>湿度：{#result__data__realtime__weather__humidity#}%</p>',
+						'<p>{#result__data__realtime__wind__direct#} {#result__data__realtime__wind__power#}</p>',
 					'</div>',
 				'</figcaption>',
 			'</figure>',
@@ -57,6 +57,39 @@ var weather=(function(){
 			document.getElementById(container).innerHTML=html;
 			//展示后清空缓存字符串
 			html='';
+		},
+		getData:function(cityname){
+			$.ajax({
+				type:"GET",
+				url:"http://op.juhe.cn/onebox/weather/query",
+				dataType:'jsonp',
+//				jsonp: 'jsoncallback',
+				data:{
+					cityname:cityname,
+					dataType:'json',
+					key:"69a45338e81d01fb2b9e3d322fdc9e99"
+				},
+				success:function(data){
+					if(data.error_code==0){
+						weather({
+							command: 'display',
+							param:['weather',data,'Nowday']
+						});
+						//天气预报重绘后,重新设置 切换城市为false
+						_cityname=false;
+						return ; 
+					}else if(data.error_code==207301){
+						alert("错误的查询城市名!");
+						
+					}else if(data.error_code==207302){
+						alert("查询不到该城市的相关信息!");
+					}else if(data.error_code==207303){
+						alert("网络错误，请重试!");
+					}
+					Gsc.remove(document.getElementById("weather").getElementsByClassName("weather-nowday")[0].getElementsByClassName("title")[0],document.getElementsByClassName("selectcity")[0]);
+					_cityname=false;
+				}
+			})
 		}
 	};
 	return function init(msg){

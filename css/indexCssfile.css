@@ -1,7 +1,7 @@
 /*内容栏*/
 .content{
 	width: 1024px;
-	margin: 10px auto;
+	margin: 10px auto 0px;
 }
 .content::after{
 	/*清除浮动*/
@@ -192,8 +192,20 @@
 	padding: 10px;
 }
 /*天气顶部时间星期地点*/
+.weather-nowday .title span:nth-child(4){
+	float: right;
+}
 .weather-nowday .title span:nth-child(3){
 	float: right;
+	font-size: 12px;
+	vertical-align: top;
+	line-height: 16px;
+}
+.weather-nowday .title span:nth-child(3) i{
+	text-decoration: none;
+	cursor: pointer;
+	color: #83D2ED;
+	
 }
 .weather-nowday .title span:nth-child(1){
 	margin-right: 10px;
@@ -256,7 +268,19 @@
 }
 .weather-nowday-figcaption .state p{
 	font-size: 12px;
-	width: 33.3%;
+	margin-left: 10px;
 	display: inline-block;
 	vertical-align: top;	
+}
+
+
+/*天气输入*/
+.selectcity{
+	position: relative;
+	top: 0;
+	float: right;
+}
+#Icityname{
+	width: 80px;
+	text-indent: .25em;
 }

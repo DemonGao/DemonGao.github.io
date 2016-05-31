@@ -220,3 +220,41 @@ header a{
 .surface-content-info p i{
 	margin-right:10px ;
 }
+footer{
+	position: absolute;
+	top: 981px;
+	width: 100%;
+	height: 110px;
+	box-sizing: border-box;
+	/*background-color: #0f1240;*/
+	background-color: rgb(50, 53, 62);
+	color: #FFFFFF;
+	text-align: center;
+	padding-top: 20px;
+}
+.footer-title{
+	font-family: "微软雅黑";
+	font-size: 21px;
+    height: 21px;
+    margin-bottom: 10px;
+}
+.footer-word{
+	font-size: 14px;
+	line-height: 16px;
+}
+.footer-end{
+	box-sizing: border-box;
+	padding: 0px 40px;
+	font-weight: 800;
+}
+
+.footer-end p span:nth-child(1){
+	float: left;
+}
+.footer-end p span:nth-child(2){
+	float: right;
+}
+.footer-end p span:nth-child(2) a{
+	color: #FFFFFF;
+	text-decoration: none;
+}
