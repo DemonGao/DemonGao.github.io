@@ -291,6 +291,7 @@
 .article{
    	padding-right:20px ;
     background: url(../img/r_line.jpg) repeat-y right;
+    padding-bottom:50px;
 }
 .article h1.a_nav{
 	border-bottom: #F1F1F1 1px solid;

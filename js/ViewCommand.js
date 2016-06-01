@@ -16,7 +16,7 @@ var ViewCommand = (function(){
 //						'<a class="lookall" id="articleRead">',
 //							'<span>阅读全文</span>',
 //						'</a>',
-						'<span class="lookall" id="articleRead">阅读全文</span>',
+						'<span class="lookall" id="articleRead" articlescrap-title="{#title#}">阅读全文</span>',
 					'</p>',
 				'</div>',
 				'<div class="datetime"><i class="iconfont">&#xe60b;</i>{#time#}</div>',
@@ -134,10 +134,10 @@ var ViewCommand = (function(){
 			})
 		},
 		//获取所选博文的数据
-		getArticleData:function(){
+		getArticleData:function(url){
 			$.ajax({
 				type:"get",
-				url:"json/test.json",
+				url:"json/"+url+".json",
 				dataType:'json',
 				success:function(data){
 					if(data.error_code==0){

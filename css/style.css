@@ -84,8 +84,7 @@ header a{
 }
 /*内容区*/
 .container{
-	position: absolute;
-	top: 0;
+	position: relative;
 	width: 100%;
 	z-index: 0;
 }
@@ -141,7 +140,6 @@ header a{
 	
 	
 }
-
 .surface-head{
 	position: relative;
 	top: 0px;
@@ -222,7 +220,6 @@ header a{
 }
 footer{
 	position: absolute;
-	top: 981px;
 	width: 100%;
 	height: 110px;
 	box-sizing: border-box;
@@ -263,3 +260,4 @@ footer{
 a:link, a:visited{
 	text-decoration: none;
 }
+
