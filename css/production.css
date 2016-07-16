@@ -1,0 +1,394 @@
+.container{
+	background-color: #eee;
+}
+.content{
+	padding-top: 20px;
+}
+/**
+ * 作品集图片动画样式
+ */
+
+.picBox{
+	position: relative;
+	box-sizing: border-box;
+	width: 331.3px;
+	height: 200px;
+	float: left;
+	margin:5px;
+	overflow: hidden;
+	transition: .25s all;
+}
+.picBox figure{
+	width: 100%;
+	height: 100%;
+	transition: .25s all;
+}
+
+.picBox figure img{
+	width: 100%;
+	height: 100%;
+}
+
+.picBox h1,.picBox p{
+	color: #FFFFFF;
+	font-family: "微软雅黑";
+	transition: .25s all;
+}
+.picBox h1{
+	font-size: 26px;
+}
+.picBox p{
+	font-size: 18px;
+}
+.picBox:hover figure{
+	opacity: .85;
+	transform: scale(1.1);
+	transition: .25s all;
+}
+.picBox .localhref{
+	position: absolute;
+	width: 100%;
+	background-color: #000000;
+	opacity: 0;
+	transition: .55s all;
+	padding: 5px 0;
+}
+.picBox:hover .localhref{
+	opacity: .8;
+	transition: .55s all;
+}
+.picBox .localhref a{
+	color: palegoldenrod;
+	font-size: 16px;
+	margin-left: 2em;
+}
+/*盒子1的特殊样式*/
+.picBox1>h1{
+	position: absolute;
+	top: 0;
+	left: 20px;
+	transform: translateY(-40px);
+	opacity: 0;
+}
+.picBox1>p{
+	position: absolute;
+	bottom: 0;
+	right: 40px;
+	transform: translateY(40px);
+	opacity: 0;
+}
+.picBox1:hover >h1{
+	transform: translateY(40px);
+	transition: .5s all;
+	opacity: 1;
+}
+.picBox1:hover >p{
+	transform: translateY(-40px);
+	opacity: 1;
+}
+.picBox1 .localhref{
+	
+	bottom: -40px;
+}
+.picBox1:hover .localhref{
+	bottom: 0;
+}
+
+/*盒子2*/
+
+.picBox2 .localhref{
+	bottom: -60px;
+	padding: 30px;
+	transform-origin: 0 0;/*设置旋转中心*/
+
+}
+.picBox2:hover .localhref{
+	transform: rotate(-10deg);
+	/*background: linear-gradient(to bottom, rgba(0,0,0,.8) 0%,rgba(0,0,0,.4) 50%,rgba(0,0,0,.8) 100%);*/
+}
+.picBox2>p{
+	position: absolute;
+	bottom: -40px;
+	right: 0;
+	
+}
+.picBox2>p a{
+	opacity: 0;
+	color: palegoldenrod;
+}
+.picBox2:hover >p{
+	bottom: 15px;
+	right: 1em;
+}
+.picBox2:hover >p a{
+	opacity: 1;
+}
+.picBox2>h1{
+	position: absolute;
+	top: 40px;
+	left: -140px;
+	transition: .5s all;
+}
+.picBox2:hover>h1{
+	left: 40px;
+}
+
+/*盒子3*/
+.picBox3>h1{
+	position: absolute;
+	top: 40px;
+	right: -140px;
+	/*height: 0;*/
+	opacity: 0;
+	overflow: hidden;
+}
+.picBox3:hover >h1{
+	right: 40px;
+	opacity: 1;
+	/*height: 1em;*/
+}
+.picBox3 .localhref{
+	/*bottom: -60px;*/
+	bottom: -60px;
+	left: -60px;
+	padding: 30px;
+	transform-origin:top right;/*设置旋转中心*/
+
+}
+.picBox3:hover .localhref{
+	transform: rotate(10deg);
+	/*background: linear-gradient(to bottom, rgba(0,0,0,.8) 0%,rgba(0,0,0,.4) 50%,rgba(0,0,0,.8) 100%);*/
+}
+.picBox3>p{
+	position: absolute;
+	bottom: -40px;
+}
+.picBox3>p a{
+	opacity: 0;
+	color: palegoldenrod;
+}
+.picBox3:hover >p{
+	bottom: 15px;
+	left: 1em;
+}
+.picBox3:hover >p a{
+	opacity: 1;
+}
+
+/*盒子4*/
+.picBox4:hover figure{
+	opacity: 1;
+}
+.picBox4 .box-top,.picBox4 .box-bottom{
+	position: absolute;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-family: "微软雅黑";
+	transition: .5s all;
+}
+.picBox4 .box-top{
+	top: 0;
+	background: linear-gradient(to top, transparent 0%, rgba(0,0,0,.6) 100%);
+}
+.picBox4 .box-bottom{
+	bottom: 0;
+	background:linear-gradient(to bottom, transparent 0%, rgba(0,0,0,.6) 100%);
+}
+.picBox4:hover .box-top,.picBox4:hover .box-bottom{
+	height: 40px;
+	transition: .5s all;
+}
+.picBox4 .box-top span{
+	display: inline-block;
+	margin: 5px 0 0 2em;
+	opacity: 0;
+	transition: .5s all;
+}
+.picBox4:hover .box-top span{
+	opacity: 1;
+}
+.picBox4 .box-bottom span{
+	display: inline-block;
+	float: right;
+	margin: 15px 2em 0 0;
+	
+}
+.picBox4 .box-bottom span a{
+	color: palegoldenrod;
+	opacity: 0;
+	transition: .5s all;
+}
+.picBox4:hover .box-bottom span a{
+	opacity: 1;
+}
+
+/*盒子5*/
+.picBox5 .box-line{
+	position: absolute;
+	top: 22%;
+	left: 15%;
+	height: 70%;
+	width: 70%;
+	/*border:1px solid #FFFFFF;*/
+	border-radius: 10px;
+	opacity: 0;
+	transform-origin: -10px -20px;
+	transform: rotate(360deg);
+	transition: 1.5s all;
+	background:url(../img/production/5.jpg) center center;
+	background-size: 110%;
+}
+.picBox5:hover .box-line{
+	opacity: 1;
+	transform: rotate(0);
+	transition: 1.5s all;
+}
+
+.picBox5>h1{
+	position: absolute;
+	bottom: 30px;
+	left: 70px;
+	opacity: 0;
+	transition: 1.5s all;
+	font-size: 12px;
+}
+.picBox5>h1 a{
+	color: #FFFFFF;
+}
+.picBox5:hover >h1{
+	transform: rotate(360deg);
+	font-size: 18px;
+	opacity: 1;
+	transition: 1.5s all;
+}
+
+.picBox5 .localhref{
+	position: absolute;
+	top: 0px;
+}
+.picBox5 .localhref p{
+	float: right;
+	margin-right: 2em;
+}
+
+/*盒子6*/
+
+.picBox6>h1{
+	position: absolute;
+	top: 60px;
+	left: 20px;
+	width: 0;
+	height: 1em;
+	overflow: hidden;
+	opacity: 0;
+	transition: 1s all;
+	
+}
+.picBox6:hover >h1{
+	opacity: 1;
+	width: 280px;
+	transition: 1s all;
+}
+.picBox6>h1 a{
+	color: #FFFFFF;
+}
+
+.picBox6 .laber{
+	position: absolute;
+	top: -40px;
+	right: -15px;
+	width: 60px;
+	height: 120px;
+	background-color: #000000;
+	opacity: 0;
+	transform-origin: top left;
+	transform: rotate(-45deg);
+	transition: 1s all;
+}
+.picBox6:hover .laber{
+	top: -10px;
+	right: 15px;
+	transform-origin: top left;
+	transform: rotate(-45deg);
+	opacity: .80;
+	transition: 1s all;
+}
+.picBox6 .laber p{
+	position: absolute;
+	bottom: 45px;
+	left: 5px;
+	opacity: 0;
+	transform: rotate(45deg);
+}
+.picBox6:hover .laber p{
+	opacity: 1;
+}
+.picBox6 .laber p a{
+	color: #eb4f38;
+	
+}
+.picBox6 .laber i{
+	font-size: 30px;
+	
+}
+
+/*盒子7*/
+.picBox7>h1{
+	position: absolute;
+	top: 60px;
+	left: 20px;
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+	transition: 1s all;
+	
+}
+.picBox7:hover >h1{
+	opacity: 1;
+	height: 1em;
+	transition: 1s all;
+}
+.picBox7>h1 a{
+	color: #FFFFFF;
+}
+.picBox7 .laber{
+	position: absolute;
+	top: -40px;
+	left: -15px;
+	width: 60px;
+	height: 120px;
+	background-color: #000000;
+	/*opacity: 0;*/
+	transform-origin: top right;
+	transform: rotate(45deg);
+	transition: 1s all;
+}
+.picBox7:hover .laber{
+	top: -10px;
+	left: 15px;
+	transform-origin: top right;
+	transform: rotate(45deg);
+	opacity: .80;
+	transition: 1s all;
+}
+.picBox7 .laber p{
+	position: absolute;
+	top: 45px;
+	right: 5px;
+	opacity: 0;
+	transform: rotate(-45deg);
+}
+.picBox7:hover .laber p{
+	opacity: 1;
+}
+.picBox7 .laber p a{
+	color: #eb4f38;
+	
+}
+.picBox7 .laber i{
+	font-size: 30px;
+	
+}

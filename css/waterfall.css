@@ -1,0 +1,21 @@
+.waterfall {
+	width:100%;
+	position: relative;
+}
+
+.waterfallBox {
+	/*padding: 15px 0 0 15px;*/
+	float: left;
+}
+
+.waterfallBox-img {
+	/*padding: 10px;*/
+	border: 1px solid #ccc;
+	/*box-shadow: 0 0 6px #ccc;*/
+	/*border-radius: 5px;*/
+}
+
+.waterfallBox-img img {
+	width: 200px;
+	height: auto;
+}

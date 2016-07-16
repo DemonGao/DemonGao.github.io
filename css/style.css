@@ -67,21 +67,22 @@ header a{
 	opacity: 0;
 }
 
-.header-navbar li:hover a{
+.header-navbar li:hover a,.header-nav li.active a{
 	background-color: red;
 	transition: all .5s;
 }
-.header-navbar li:hover i{
+.header-navbar li:hover i,.header-nav li.active i{
 	top: -45px;
 	opacity: 0;
 	transition: all .5s;
 	
 }
-.header-navbar li:hover p{
+.header-navbar li:hover p,.header-nav li.active p{
 	top: -22px;
 	transition: all .5s;
 	opacity: 1;
 }
+
 /*内容区*/
 .container{
 	position: relative;
@@ -121,6 +122,18 @@ header a{
 	left: 35%;
 	animation: blogImageP2 3s infinite;
 }
+.side-bar{
+	width: 28%;
+	float: right;
+	box-sizing: border-box;
+}
+.content-bar{
+	width: 72%;
+	float: left;
+	padding-top: 10px;
+}
+
+
 /*浮出层博主信息*/
 /*不可拖拽 拖拽样式删除*/
 .surface .resizeBR {
@@ -261,3 +274,34 @@ a:link, a:visited{
 	text-decoration: none;
 }
 
+/*内容栏*/
+.content{
+	width: 1024px;
+	margin: 10px auto 0px;
+}
+.content::after{
+	/*清除浮动*/
+	clear:both;
+	content:'.';
+	display:block;
+	width: 0;
+	height: 0;
+	visibility: hidden;
+}
+.content>h2{
+	font-family: "微软雅黑";
+	font-size: 18px;
+	font-weight: bold;
+    line-height: 36px;
+    color: #333;
+    background: url(../img/h_line.jpg) repeat-x 20px center;
+	/*border-bottom: #db6d4c 4px solid;
+	margin-bottom: 30px;*/
+}
+.content>h2 p{
+	background: #FFFFFF;
+	width: 60px;
+}
+.content>h2 span{
+	color: #FE5187;
+}
