@@ -1,0 +1,11 @@
+{
+	"reason":"successed!",
+	"result":{
+		"data":{
+			"titlename":"关于我",
+			"content":"第一次在外感受到家的气息!<br/><span class='space4'></span>很高兴在一个陌生的城市<br/><span class='space6'></span>能够认识你们..."
+		},
+		"type":"个人博客"
+	},
+	"error_code":0
+}
