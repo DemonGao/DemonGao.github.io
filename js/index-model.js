@@ -39,7 +39,7 @@ surfaced.init();
  */
 var articlescrapData = [
 	{
-		src: 'img/articlescrap/xingqin.jpg',
+		src: 'img/articlescrap/xingqin.JPG',
 		title: '家的气息',
 		text: '第一次在外感受到家的气息!<br><span class="space2"></span>很高兴在一个陌生的城市<br/><span class="space4"></span>能够认识你们...	',
 		type_href:'#',
