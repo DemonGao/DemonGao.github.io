@@ -75,7 +75,7 @@ ViewCommand({
 //获取天气数据 并绘制
 ViewCommand({
 	command:'getWeatherData',
-	param:['烟台']
+	param:['北京']
 });
 //天气切换
 var SelectCity={
