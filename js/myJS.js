@@ -31,6 +31,7 @@ var preventDefault=function(event){
 	//标准浏览器
 	if(event.preventDefault)
 	{
+		
 		event.preventDefault();
 	}else{
 	//IE

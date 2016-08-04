@@ -39,6 +39,18 @@ surfaced.init();
  */
 var articlescrapData = [
 	{
+		src: 'img/articlescrap/0721.jpeg',
+		title: 'Web storage和cookie的区别',
+		text: [
+				'Web Storage的概念和cookie相似,区别是它是为了更大容量存储设计的。',
+				'Cookie的大小是受限制的，并且每次你请求一个新的页面的时候Cookie都会被发送过去，这样无形中浪费了带宽，',
+				'另外cookie还需要指定作用域，不可以跨域调用......',
+				].join(''),
+		type_href:'#',
+		type_href_title:'JavaScript',
+		time:'2016-08-03',
+	}, 
+	{
 		src: 'img/articlescrap/xingqin.JPG',
 		title: '家的气息',
 		text: '第一次在外感受到家的气息!<br><span class="space2"></span>很高兴在一个陌生的城市<br/><span class="space4"></span>能够认识你们...	',
@@ -53,7 +65,7 @@ var articlescrapData = [
 		type_href:'#',
 		type_href_title:'个人博客',
 		time:'2016-05-29',
-	}, 
+	},
 //	{
 //		src: 'img/articlescrap/01.jpg',
 //		title: '住在手机里的朋友',
@@ -123,6 +135,14 @@ addEvent(document.getElementById("content-bar"),"click",function(event){
 		ViewCommand({
 			command:'getArticleData',
 			param:[target.getAttribute("articlescrap-title")]
+		});
+	}
+	if(target.id=="goback"){
+		ViewCommand({
+			//参数说明 方法display
+			command: 'display',
+			//参数说明  parma1 : 元素容器,parma2 : 标题数据,parma3 : 元素模版
+			param: ['content-bar', articlescrapData, 'articlescrap']
 		});
 	}
 });

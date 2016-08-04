@@ -7,7 +7,27 @@
 /**
  * 作品集图片动画样式
  */
-
+/*
+ 媒体查询
+ * */
+@media (max-width: 1024px) {
+	.content{
+		width: 100%;
+		margin: 0;
+	}
+	.picBox{
+		width: 48%;
+	}
+}
+@media (max-width: 768px) {
+	.content{
+		width: 100%;
+		margin: 0;
+	}
+	.picBox{
+		width: 100%;
+	}
+}
 .picBox{
 	position: relative;
 	box-sizing: border-box;

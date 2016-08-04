@@ -27,7 +27,7 @@ var ViewCommand = (function(){
 			'<div class="article">',
 				'<h1 class="a_nav">',
 					'<span>像“草根”一样，紧贴着地面，低调的存在，冬去春来，枯荣无恙。</span>',
-					'<a href="index.html">网站首页</a>',
+					'<a href="#" id="goback">网站首页</a>',
 					'<a href="#">{#result__type#}</a>',
 				'</h1>',
 				'<div class="a_content">',
